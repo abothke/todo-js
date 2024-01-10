@@ -40,7 +40,7 @@ addButton.addEventListener('click', () => {
     }
     })
 } else {
-    alertMsg.textContent = "3 Zeichen sind eigentlich schon zu viel für ein Todo! 🤷‍♂️ Aber bitte mindestens 3 Zeichen eingeben."
+    alertMsg.textContent = "3 Zeichen sind eigentlich schon zu viel für ein Todo! 🥱 Aber bitte mindestens 3 Zeichen eingeben."
 }
 })
 
