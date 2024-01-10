@@ -15,7 +15,7 @@ addButton.addEventListener('click', () => {
     todoItem.innerHTML =`
     <div id="todo-${uniqueID}" class="todo-content">
     <input type="checkbox" id="checkbox-${uniqueID}" class="checkbox">
-    <h2 id="h2-${uniqueID}">${todoInput}</h2>
+    <h2 id="h2-${uniqueID}" class="h2-todo">${todoInput}</h2>
     </div>
     <div id="deleteMe-${uniqueID}" class="deleteMe">❎</div>
     `
