@@ -1,22 +1,38 @@
-const addButton = document.querySelector('#todo-add');
+const addButton = document.querySelector("#todo-add");
 const todoCheckbox = document.querySelector("#checkbox")
-const deleteButton = 
+const deleteButton = document.querySelector("#deleteMe")
 let todoArray = []
 
 addButton.addEventListener('click', () => {
     const todoInput = document.querySelector('#todo-input').value;
     const todoItems = document.querySelector('#todo-items');
     todoArray.push(todoInput)
+    const uniqueID = Math.floor(Math.random() * 99999)
     const todoItem = document.createElement('div')
     todoItem.classList.add("todo-item")
+    todoItem.id = `todo-item-${uniqueID}`
     todoItem.innerHTML =`
-    <div id="todo-content" class="todo-content">
-    <input type="checkbox" id="checkbox">
+    <div id="todo-${uniqueID}" class="todo-content">
+    <input type="checkbox" id="checkbox-${uniqueID}">
     <h2>${todoInput}</h2>
     </div>
-    <div id="deleteMe"> X </div>
-
+    <div id="deleteMe-${uniqueID}"> X </div>
     `
+    
     todoItems.appendChild(todoItem);
+    document.querySelector(`#checkbox-${uniqueID}`).addEventListener("change", () => {
+        document.querySelector("h2").style.textDecoration = "line-through";
+    }
+    )
+    document.querySelector(`#checkbox-${uniqueID}`).addEventListener("change", (el) => {
+        el.target.checked = true;
+    })
+    document.querySelector(`#deleteMe-${uniqueID}`).addEventListener("click", () =>{
+        if (document.querySelector(`#checkbox-${uniqueID}`).checked == true){
+        document.querySelector(`#todo-item-${uniqueID}`).innerHTML = "";
+    } else {
+        alert("Ist das Todo auch wirklich erledigt?")
+    }
+    })
 })
 
