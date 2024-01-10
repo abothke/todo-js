@@ -15,7 +15,7 @@ addButton.addEventListener('click', () => {
     todoItem.innerHTML =`
     <div id="todo-${uniqueID}" class="todo-content">
     <input type="checkbox" id="checkbox-${uniqueID}" class="checkbox">
-    <h2>${todoInput}</h2>
+    <h2 id="h2-${uniqueID}">${todoInput}</h2>
     </div>
     <div id="deleteMe-${uniqueID}" class="deleteMe">❎</div>
     `
@@ -24,7 +24,7 @@ addButton.addEventListener('click', () => {
     document.querySelector('#todo-input').value = ""; // Löscht den Text aus dem Inputfeld wenn ein Todo hinzugefügt wurde
     todoItems.appendChild(todoItem);
     document.querySelector(`#checkbox-${uniqueID}`).addEventListener("change", () => {
-        document.querySelector("h2").style.textDecoration = "line-through";
+        document.querySelector(`#h2-${uniqueID}`).style.textDecoration = "line-through";
     }
     )
     document.querySelector(`#checkbox-${uniqueID}`).addEventListener("change", (el) => {
