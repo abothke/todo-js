@@ -1,6 +1,7 @@
 const addButton = document.querySelector("#todo-add");
 const todoCheckbox = document.querySelector("#checkbox")
 const deleteButton = document.querySelector("#deleteMe")
+const alertMsg = document.querySelector("#alert")
 let todoArray = []
 
 addButton.addEventListener('click', () => {
@@ -16,9 +17,10 @@ addButton.addEventListener('click', () => {
     <input type="checkbox" id="checkbox-${uniqueID}">
     <h2>${todoInput}</h2>
     </div>
-    <div id="deleteMe-${uniqueID}"> X </div>
+    <div id="deleteMe-${uniqueID}" class="deleteMe"> X </div>
     `
-    
+    if (todoInput.length >= 3){
+    alertMsg.textContent = ""
     todoItems.appendChild(todoItem);
     document.querySelector(`#checkbox-${uniqueID}`).addEventListener("change", () => {
         document.querySelector("h2").style.textDecoration = "line-through";
@@ -34,5 +36,8 @@ addButton.addEventListener('click', () => {
         alert("Ist das Todo auch wirklich erledigt?")
     }
     })
+} else {
+    alertMsg.textContent = "Bitte mindestens 3 Zeichen eingeben"
+}
 })
 

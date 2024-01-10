@@ -2,20 +2,42 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:monospace
+    font-family:monospace;
+    font-size: 1.2em
 }
 
 body{
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    gap: 20px;
 }
 
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: blueviolet;
+    gap: 20px;
+    padding: 2em;
+}
+
+h3{
+    color: red;
+}
 .todo-item, .todo-content{
     display: flex;
     align-items: center;
     width: 300px;
     gap: 20px;
     text-decoration: ;
+}
+
+.deleteMe{
+    color: red;
+    font-weight: 800;
 }
