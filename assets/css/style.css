@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family:monospace;
-    font-size: 1.2em
+    font-size: 1.2em;
+    color: white;
 }
 
 body{
@@ -40,4 +41,15 @@ h3{
 .deleteMe{
     color: red;
     font-weight: 800;
+}
+
+button{
+    padding: 10px;
+    border-radius: 5px;
+    width: 5em;
+    color: black;
+}
+
+input{
+    color: grey;
 }
