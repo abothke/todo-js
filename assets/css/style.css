@@ -1,61 +1,122 @@
-*{
+* {
+    box-sizing: border-box;
+    color: white;
+    font-family: monospace;
+    font-size: 1.2em;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family:monospace;
-    font-size: 1.2em;
-    color: white;
 }
 
-body{
+body {
+    align-items: center;
+    animation: gradient 15s ease infinite;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     height: 100vh;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 20px;
 }
 
-#container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 10px;
-    background-color: blueviolet;
-    gap: 20px;
-    padding: 2em;
+button {
+    border-radius: 5px;
+    color: black;
+    padding: 10px;
+    width: 5em;
 }
 
-h3{
-    color: red;
-}
-.todo-item, .todo-content{
-    display: flex;
-    align-items: center;
-    width: 400px;
-    gap: 20px;
-}
-
-.deleteMe{
+.deleteMe {
     color: red;
     font-weight: 800;
 }
 
-button{
-    padding: 10px;
-    border-radius: 5px;
-    width: 5em;
-    color: black;
+h3 {
+    color: red;
 }
 
-input{
+input {
     color: grey;
 }
 
-.todo-item{
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    color: currentColor;
+    display: grid;
+    font: inherit;
+    height: 1.15em;
+    margin: 0;
+    place-content: center;
+    width: 1.15em;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]::before {
+    box-shadow: inset 1em 1em 0 0 var(--background-color);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    content: "";
+    height: 0.65em;
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    width: 0.65em;
+}
+
+#container {
+    align-items: center;
+    background: #27272c;
+    border-image: linear-gradient(var(--gradient-angle,to bottom),var(--gradient)) 1;
+    border-style: solid;
+    border-width: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    padding: 2em;
+    --gradient-angle: 35deg;
+}
+
+.todo-content, .todo-item {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    width: 400px;
+}
+
+.todo-item {
     background-color: rgba(255, 255, 255, 0.459);
-    padding: 10px;
     border-radius: 5px;
     margin: 1em 0;
+    padding: 10px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+:root {
+    --background-color: #27272c;
+    --color-blue: #00bbcb;
+    --color-gray: #8e8e8e;
+    --color-green: #62cb5c;
+    --color-on-blue: #004a09;
+    --color-primary: #ab79d6;
+    --color-secondary: #d367c1;
+    --color-yellow: #dedf40;
+    --form-control-disabled: #959495;
+    --gradient: var(--color-secondary) 10%,var(--color-yellow) 25%,var(--color-green) 50%,var(--color-blue) 75%,var(--color-primary) 90%;
 }

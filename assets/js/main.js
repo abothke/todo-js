@@ -14,10 +14,10 @@ addButton.addEventListener('click', () => {
     todoItem.id = `todo-item-${uniqueID}`
     todoItem.innerHTML =`
     <div id="todo-${uniqueID}" class="todo-content">
-    <input type="checkbox" id="checkbox-${uniqueID}">
+    <input type="checkbox" id="checkbox-${uniqueID}" class="checkbox">
     <h2>${todoInput}</h2>
     </div>
-    <div id="deleteMe-${uniqueID}" class="deleteMe">❌</div>
+    <div id="deleteMe-${uniqueID}" class="deleteMe">❎</div>
     `
     if (todoInput.length >= 3){
     alertMsg.textContent = ""; // Löscht die Fehlermeldung, wenn vorhanden
