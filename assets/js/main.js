@@ -17,7 +17,7 @@ addButton.addEventListener('click', () => {
     <input type="checkbox" id="checkbox-${uniqueID}">
     <h2>${todoInput}</h2>
     </div>
-    <div id="deleteMe-${uniqueID}" class="deleteMe"> X </div>
+    <div id="deleteMe-${uniqueID}" class="deleteMe">❌</div>
     `
     if (todoInput.length >= 3){
     alertMsg.textContent = ""; // Löscht die Fehlermeldung, wenn vorhanden
@@ -32,7 +32,8 @@ addButton.addEventListener('click', () => {
     })
     document.querySelector(`#deleteMe-${uniqueID}`).addEventListener("click", () =>{
         if (document.querySelector(`#checkbox-${uniqueID}`).checked == true){
-        document.querySelector(`#todo-item-${uniqueID}`).innerHTML = "";
+        document.querySelector(`#todo-item-${uniqueID}`).innerHTML = ""; // Löscht das Todo aus dem HTML
+        document.querySelector(`#todo-item-${uniqueID}`).style.display = "none"; // Stellt das Todo auf "none" um es aus dem DOM zu entfernen
         todoArray.splice(todoArray.indexOf(todoInput), 1) // Löscht das Todo aus dem Array
     } else {
         alert("Ist das Todo auch wirklich erledigt?")
