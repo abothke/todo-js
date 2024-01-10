@@ -46,6 +46,7 @@ h1{
 h3 {
     color: black;
     font-family: "Roboto";
+    text-align: center;
 }
 
 .alert{
@@ -145,4 +146,21 @@ input[type="checkbox"]::before {
     --color-yellow: #dedf40;
     --form-control-disabled: #959495;
     --gradient: var(--color-secondary) 10%,var(--color-yellow) 25%,var(--color-green) 50%,var(--color-blue) 75%,var(--color-primary) 90%;
+}
+/* Mobile version ab 768px Breite */
+@media screen and (max-width: 768px) {
+    *{
+        font-size: 1em;
+    }
+     .logo{
+        width: 75%;
+        position: relative;
+        margin-top: 1em;
+     }
+     body{
+        height: 100%;
+     }
+     .todo-item{
+        width: 50vw;
+         }
 }
