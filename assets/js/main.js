@@ -32,6 +32,7 @@ addButton.addEventListener('click', () => {
     document.querySelector(`#deleteMe-${uniqueID}`).addEventListener("click", () =>{
         if (document.querySelector(`#checkbox-${uniqueID}`).checked == true){
         document.querySelector(`#todo-item-${uniqueID}`).innerHTML = "";
+        todoArray.splice(todoArray.indexOf(todoInput), 1) // Löscht das Todo aus dem Array
     } else {
         alert("Ist das Todo auch wirklich erledigt?")
     }
