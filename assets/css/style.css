@@ -107,6 +107,7 @@ input[type="checkbox"]::before {
     padding: 2em;
     --gradient-angle: 35deg;
     width: 65%;
+    margin-bottom: 2em;
 }
 
 .todo-content, .todo-item, .todo-items {
