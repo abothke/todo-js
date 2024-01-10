@@ -3,11 +3,15 @@ const todoCheckbox = document.querySelector("#checkbox")
 const deleteButton = document.querySelector("#deleteMe")
 const alertMsg = document.querySelector("#alert")
 let todoArray = []
+console.log(todoArray);
 
 addButton.addEventListener('click', () => {
     const todoInput = document.querySelector('#todo-input').value;
     const todoItems = document.querySelector('#todo-items');
-    todoArray.push(todoInput)
+    console.log(todoArray);
+    if (todoInput.length >= 3){
+        todoArray.push(todoInput)
+    }
     const uniqueID = Math.floor(Math.random() * 99999)
     const todoItem = document.createElement('div')
     todoItem.classList.add("todo-item")
@@ -30,11 +34,14 @@ addButton.addEventListener('click', () => {
     document.querySelector(`#checkbox-${uniqueID}`).addEventListener("change", (el) => {
         el.target.checked = true;
     })
+
     document.querySelector(`#deleteMe-${uniqueID}`).addEventListener("click", () =>{
         if (document.querySelector(`#checkbox-${uniqueID}`).checked == true){
+        console.log(todoArray, todoInput);
         document.querySelector(`#todo-item-${uniqueID}`).innerHTML = ""; // Löscht das Todo aus dem HTML
         document.querySelector(`#todo-item-${uniqueID}`).style.display = "none"; // Stellt das Todo auf "none" um es aus dem DOM zu entfernen
         todoArray.splice(todoArray.indexOf(todoInput), 1) // Löscht das Todo aus dem Array
+        console.log(todoArray);
     } else {
         alert("Das kann doch auch bis morgen warten!")
     }
