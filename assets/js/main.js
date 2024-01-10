@@ -20,7 +20,8 @@ addButton.addEventListener('click', () => {
     <div id="deleteMe-${uniqueID}" class="deleteMe"> X </div>
     `
     if (todoInput.length >= 3){
-    alertMsg.textContent = ""
+    alertMsg.textContent = ""; // Löscht die Fehlermeldung, wenn vorhanden
+    document.querySelector('#todo-input').value = ""; // Löscht den Text aus dem Inputfeld wenn ein Todo hinzugefügt wurde
     todoItems.appendChild(todoItem);
     document.querySelector(`#checkbox-${uniqueID}`).addEventListener("change", () => {
         document.querySelector("h2").style.textDecoration = "line-through";
