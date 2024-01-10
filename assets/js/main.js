@@ -36,11 +36,11 @@ addButton.addEventListener('click', () => {
         document.querySelector(`#todo-item-${uniqueID}`).style.display = "none"; // Stellt das Todo auf "none" um es aus dem DOM zu entfernen
         todoArray.splice(todoArray.indexOf(todoInput), 1) // Löscht das Todo aus dem Array
     } else {
-        alert("Ist das Todo auch wirklich erledigt?")
+        alert("Das kann doch auch bis morgen warten!")
     }
     })
 } else {
-    alertMsg.textContent = "Bitte mindestens 3 Zeichen eingeben"
+    alertMsg.textContent = "3 Zeichen sind eigentlich schon zu viel für ein Todo! 🤷‍♂️ Aber bitte mindestens 3 Zeichen eingeben."
 }
 })
 
