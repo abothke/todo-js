@@ -43,4 +43,3 @@ addButton.addEventListener('click', () => {
     alertMsg.textContent = "3 Zeichen sind eigentlich schon zu viel für ein Todo! 🥱 Aber bitte mindestens 3 Zeichen eingeben."
 }
 })
-
